@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Shortener</title>
+    {%load static%}
+  </head>
+  <body>
+    <h1>Encode/Decode URL's</h1>
+    <form id="encodeForm">
+      {% csrf_token %}
+      <label for="encodeurl">Encode URL</label><br />
+      <input type="text" id="encodeurl" name="encodeurl" />
+      <button type="submit">Encode!</button>
+    </form>
+    <p>Encoded URL: <span id="encodedUrl"></span></p>
+    <p>----------------------------------------------------</p>
+    <form id="decodeForm">
+      <label for="decodeurl">Decode URL</label><br />
+      <input type="text" id="decodeurl" name="decodeurl" />
+      <button type="submit">Decode!</button>
+    </form>
+    <p>Decoded URL: <span id="decodedUrl"></span></p>
+    <script src="{%static '/js/main.js' %}"></script>
+  </body>
+</html>
